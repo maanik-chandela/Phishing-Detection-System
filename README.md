@@ -204,14 +204,13 @@ PhishGuard is for **education, experimentation, and supplementary risk awareness
 
 ## Author
 
-Developed by [Maanik Chandela](https://github.com/maanik-chandela) as a BTech computer science and data science project.
+Developed by [Maanik Chandela](https://github.com/maanik-chandela) as a BTech computer science and data science student as his project.
 
 Contributions and reproducibility feedback are welcome through [GitHub Issues](https://github.com/maanik-chandela/Phishing-Detection-System/issues).
 
----
+## License
 
-<div align="center">
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
-**Think before you click.**
-
-</div>
+Copyright © 2026 Maanik Chandela.
