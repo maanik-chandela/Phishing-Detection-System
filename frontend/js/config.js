@@ -25,7 +25,7 @@ window.PHISHGUARD_CONFIG = {
     folio: {
       name: '01 / FOLIO', tagline: 'Newspaper / ink', reference: 'Niccolò Miranda',
       layout: 'editorial', effect: 'paper',
-      colors: { bg:'#e9e4d8', ink:'#272c27', muted:'#777569', line:'#a9a69a', panel:'#dad4c7', accent:'#405b52', button:'#262b28', buttonInk:'#efe9db' },
+      colors: { bg:'#e9e4d8', ink:'#272c27', muted:'#777569', line:'#a9a69a', panel:'#dad4c7', accent:'#318c31', button:'#262b28', buttonInk:'#efe9db' },
       fonts: { display:'"Bodoni Moda", Georgia, serif', body:'"DM Sans", sans-serif', mono:'"DM Mono", monospace' },
       heading: 'THE WEB <em>isn’t</em><br><span>always</span> honest.', subtitle:'Read between the links.', eyebrow:'THE DAILY DIGITAL / VOL. 001',
       typography: { title:'clamp(4.8rem, 10.6vw, 11.5rem)', weight:500, tracking:'-.082em', leading:.86 },
@@ -37,7 +37,7 @@ window.PHISHGUARD_CONFIG = {
       layout: 'strict', effect: 'boxes',
       colors: { bg:'#d7e3d2', ink:'#0f211e', muted:'#496a60', line:'#85a093', panel:'#c2d4c6', accent:'#114b40', button:'#142b24', buttonInk:'#edffdc' },
       fonts: { display:'"Space Grotesk", sans-serif', body:'"Manrope", sans-serif', mono:'"IBM Plex Mono", monospace' },
-      heading:'IDENTIFY<span> /</span><br>THE SIGNAL.', subtitle:'Computational reading for suspicious addresses.', eyebrow:'PG [PROGRAM_01] / ACTIVE',
+      heading:'IDENTIFY<span> ~ </span><br>THE SIGNAL', subtitle:'Computational reading for suspicious addresses.', eyebrow:'PG [PROGRAM_01] / ACTIVE',
       typography: { title:'clamp(5rem, 11vw, 12rem)', weight:700, tracking:'-.085em', leading:.84 },
       geometry: { radius:'2px', inputRadius:'2px', edge:'2px', width:'1240px', heroAlign:'left', grain:.03 },
       animation: { entry:'clip', hover:'shift', speed:.65, amplitude:1.3 },

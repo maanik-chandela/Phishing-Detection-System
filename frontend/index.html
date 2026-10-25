@@ -42,8 +42,15 @@
 </main>
 <footer class="site-footer"><span>PHISHGUARD®</span><span>AN AUTOMATED SECOND OPINION — NOT A GUARANTEE</span><a href="#top">BACK TO TOP ↑</a></footer>
 <div class="settings-scrim" id="settingsBackdrop" hidden></div>
-<aside class="settings-panel" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
- <div class="settings-heading"><div><span class="settings-overline">ART DIRECTION</span><h2 id="settingsTitle">Choose a world.</h2><p>Ten distinct visual languages. One actual URL scanner.</p></div><button class="close-settings" type="button" id="settingsClose" aria-label="Close customize panel">×</button></div>
+<aside
+    class="settings-panel"
+    id="settingsPanel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="settingsTitle"
+    data-lenis-prevent
+    hidden>
+<div class="settings-heading"><div><span class="settings-overline">ART DIRECTION</span><h2 id="settingsTitle">Choose a world.</h2><p>Ten distinct visual languages. One actual URL scanner.</p></div><button class="close-settings" type="button" id="settingsClose" aria-label="Close customize panel">×</button></div>
  <div class="theme-list" id="themeList" role="group" aria-label="Select a design theme"></div>
  <div class="setting-toggle"><label for="gridToggle">INTERACTIVE GRID</label><input id="gridToggle" type="checkbox"></div>
  <p class="settings-footnote">Edit <code>frontend/js/config.js</code> to customize the colors, fonts, motion and effects of every theme.</p>
