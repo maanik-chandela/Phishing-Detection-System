@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard | Website Risk Analysis</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🛡️ PHISHGUARD</div>
+        <span class="header-label">SECURITY ANALYSIS CONSOLE</span>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <p class="eyebrow">MACHINE LEARNING SECURITY SYSTEM</p>
+
+            <h1>Phishing Website Detection</h1>
+
+            <p class="subtitle">
+                Analyze suspicious URLs using machine learning
+                and receive an interpretable risk assessment.
+            </p>
+
+            <form id="analyzeForm">
+
+                <div class="search-box">
+
+                    <input
+                        type="url"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        required
+                    >
+
+                    <button type="submit" id="analyzeButton">
+                        Analyze URL
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p class="notice">
+                URL-only analysis. Submitted websites are not opened
+                or executed by this version.
+            </p>
+
+            <p id="status"></p>
+
+        </section>
+
+        <section id="results" class="hidden">
+
+            <div class="result-heading">
+                <h2>Security Analysis Report</h2>
+                <span id="riskBadge"></span>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="card score-card">
+
+                    <h3>Risk Score</h3>
+
+                    <div id="riskScore" class="score">--</div>
+
+                    <p id="riskDescription"></p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Model Assessment</h3>
+
+                    <p id="prediction" class="prediction"></p>
+
+                    <p id="modelName"></p>
+
+                    <p id="analysisMode"></p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Detected Indicators</h3>
+
+                <ul id="indicators"></ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Website X-Ray — URL Features</h3>
+
+                <div id="features" class="feature-grid"></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Security Recommendations</h3>
+
+                <ul id="recommendations"></ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        BTech Mini-Project | Machine Learning-Based Phishing Detection
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
