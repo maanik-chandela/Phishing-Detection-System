@@ -1,131 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>PhishGuard | Website Risk Analysis</title>
-
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e9e7e0"><meta name="description" content="PhishGuard: an experimental interface for machine-learning-assisted URL risk assessment.">
+<title>PhishGuard — Look before you click.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Barlow+Condensed:wght@400;600;700;800;900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body>
-
-    <header>
-        <div class="logo">🛡️ PHISHGUARD</div>
-        <span class="header-label">SECURITY ANALYSIS CONSOLE</span>
-    </header>
-
-    <main>
-
-        <section class="hero">
-
-            <p class="eyebrow">MACHINE LEARNING SECURITY SYSTEM</p>
-
-            <h1>Phishing Website Detection</h1>
-
-            <p class="subtitle">
-                Analyze suspicious URLs using machine learning
-                and receive an interpretable risk assessment.
-            </p>
-
-            <form id="analyzeForm">
-
-                <div class="search-box">
-
-                    <input
-                        type="url"
-                        id="urlInput"
-                        placeholder="https://example.com"
-                        required
-                    >
-
-                    <button type="submit" id="analyzeButton">
-                        Analyze URL
-                    </button>
-
-                </div>
-
-            </form>
-
-            <p class="notice">
-                URL-only analysis. Submitted websites are not opened
-                or executed by this version.
-            </p>
-
-            <p id="status"></p>
-
-        </section>
-
-        <section id="results" class="hidden">
-
-            <div class="result-heading">
-                <h2>Security Analysis Report</h2>
-                <span id="riskBadge"></span>
-            </div>
-
-            <div class="dashboard-grid">
-
-                <div class="card score-card">
-
-                    <h3>Risk Score</h3>
-
-                    <div id="riskScore" class="score">--</div>
-
-                    <p id="riskDescription"></p>
-
-                </div>
-
-                <div class="card">
-
-                    <h3>Model Assessment</h3>
-
-                    <p id="prediction" class="prediction"></p>
-
-                    <p id="modelName"></p>
-
-                    <p id="analysisMode"></p>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Detected Indicators</h3>
-
-                <ul id="indicators"></ul>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Website X-Ray — URL Features</h3>
-
-                <div id="features" class="feature-grid"></div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Security Recommendations</h3>
-
-                <ul id="recommendations"></ul>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        BTech Mini-Project | Machine Learning-Based Phishing Detection
-    </footer>
-
-    <script src="js/app.js"></script>
-
-</body>
-</html>
+<body data-theme="folio">
+<canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+<div class="texture" aria-hidden="true"></div>
+<div class="stage-frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<header class="site-header"><a class="wordmark" href="#top">PHISHGUARD<span class="wordmark-mark">®</span></a><span class="header-middle" id="headerMiddle">URL / RISK INDEX</span><button class="customize-btn" type="button" id="settingsOpen" aria-haspopup="dialog" aria-controls="settingsPanel"><span>CUSTOMIZE</span><span class="customize-icon" aria-hidden="true">↗</span></button></header>
+<main id="top">
+<section class="hero" id="scanner" aria-labelledby="heroTitle">
+  <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
+  <div class="side-index" aria-hidden="true">PG — 001 / URL INTELLIGENCE</div>
+  <div class="hero-content">
+    <p class="eyebrow" id="eyebrow">THE ART OF SECOND-GUESSING</p>
+    <div class="headline-wrapper"><h1 id="heroTitle">DON'T TRUST<br><em>the</em> <span>link.</span></h1><div class="headline-decoration" aria-hidden="true">↗</div></div>
+    <p class="hero-subtitle" id="heroSubtitle">One address. One second opinion.</p>
+    <form id="scanForm" novalidate>
+      <label for="urlInput" class="sr-only">Website address to analyze</label>
+      <div class="input-shell" id="inputShell"><span class="input-prefix" aria-hidden="true">↳</span><input id="urlInput" name="url" type="url" placeholder="https://example.com" autocomplete="url" inputmode="url" maxlength="4096" spellcheck="false" required><button class="check-btn" id="checkButton" type="submit"><span id="checkLabel">CHECK</span><span class="check-arrow" aria-hidden="true">↗</span></button></div>
+      <div class="form-meta"><span id="modeLabel">URL-ONLY MODEL</span><span>PRESS ENTER ↵</span></div>
+      <p class="form-error" id="errorMessage" role="alert" hidden></p>
+    </form>
+    <div class="hero-artefact" id="heroArtefact" aria-hidden="true"><div class="artefact-ring"><span class="artefact-text">QUESTION THE ADDRESS · QUESTION THE ADDRESS · </span></div><div class="artefact-center">?</div></div>
+  </div>
+  <div class="hero-foot"><span>PHISHGUARD / MACHINE LEARNING</span><span>EST. 2026 — EXPERIMENTAL INTERFACE</span></div>
+  <div class="scan-overlay" id="scanOverlay" aria-live="polite" hidden><div class="scan-visual" aria-hidden="true"><span></span><span></span><span></span></div><p class="scan-kicker">EXAMINING THE ADDRESS</p><div class="scan-phrase" id="scanPhrase">READING THE SIGNAL</div><div class="scan-track"><div id="scanProgress"></div></div><p class="scan-disclaimer">MODEL ASSESSMENT · NOT A SAFETY GUARANTEE</p></div>
+</section>
+<section class="report" id="resultSection" aria-labelledby="resultTitle" hidden>
+ <div class="report-topline"><span>01 / ANALYSIS OUTPUT</span><span id="resultTimestamp">—</span></div>
+ <div class="report-heading"><p class="eyebrow">THE RESULT</p><h2 id="resultTitle">A closer <em>look.</em></h2></div>
+ <div class="report-columns" id="reportColumns"><div class="score-panel" id="scorePanel"><span class="label">MODEL-DERIVED SCORE</span><div class="score-display"><strong id="riskNumber">—</strong><small>/100</small></div><span class="risk-level" id="riskPill">PENDING</span><p class="report-disclaimer">Uncalibrated score. Low risk does not establish safety.</p></div><div class="verdict-panel"><span class="label">MODEL CLASSIFICATION</span><h3 id="verdictText">—</h3><p class="reported-url" id="reportUrl"></p><div class="report-tags"><span id="reportModel">—</span><span id="reportMode">URL ONLY</span></div></div></div>
+ <div class="detail-columns"><article><div class="detail-heading"><h3>Observed signals</h3><span>01</span></div><ul id="indicatorList"></ul></article><article><div class="detail-heading"><h3>What to do next</h3><span>02</span></div><ul id="recommendationList"></ul></article></div>
+ <details class="features"><summary>VIEW EXTRACTED FEATURES <span>+</span></summary><div class="feature-list" id="featureList"></div></details>
+ <button class="again-btn" id="scanAgain" type="button">CHECK ANOTHER URL <span>↗</span></button>
+</section>
+</main>
+<footer class="site-footer"><span>PHISHGUARD®</span><span>AN AUTOMATED SECOND OPINION — NOT A GUARANTEE</span><a href="#top">BACK TO TOP ↑</a></footer>
+<div class="settings-scrim" id="settingsBackdrop" hidden></div>
+<aside class="settings-panel" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
+ <div class="settings-heading"><div><span class="settings-overline">ART DIRECTION</span><h2 id="settingsTitle">Choose a world.</h2><p>Ten distinct visual languages. One actual URL scanner.</p></div><button class="close-settings" type="button" id="settingsClose" aria-label="Close customize panel">×</button></div>
+ <div class="theme-list" id="themeList" role="group" aria-label="Select a design theme"></div>
+ <div class="setting-toggle"><label for="gridToggle">INTERACTIVE GRID</label><input id="gridToggle" type="checkbox"></div>
+ <p class="settings-footnote">Edit <code>frontend/js/config.js</code> to customize the colors, fonts, motion and effects of every theme.</p>
+</aside>
+<script src="/js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js" defer></script>
+<script src="/js/app.js" defer></script>
+</body></html>
