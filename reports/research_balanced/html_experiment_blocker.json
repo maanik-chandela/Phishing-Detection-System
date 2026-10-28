@@ -1,0 +1,16 @@
+{
+  "status": "blocked",
+  "reason": "Saved HTML corpus contains empty/unusable files for some samples despite html_available=True in manifest.",
+  "details": [
+    {"split": "train", "sample_id": 202420250774, "html_path": "data/raw/All_HTML/202420250774.txt", "issue": "empty file"},
+    {"split": "train", "sample_id": 202420253632, "html_path": "data/raw/All_HTML/202420253632.txt", "issue": "empty file"},
+    {"split": "train", "sample_id": 202420254124, "html_path": "data/raw/All_HTML/202420254124.txt", "issue": "empty file"},
+    {"split": "validation", "sample_id": 202420254273, "html_path": "data/raw/All_HTML/202420254273.txt", "issue": "empty file"},
+    {"split": "validation", "sample_id": 202420254365, "html_path": "data/raw/All_HTML/202420254365.txt", "issue": "empty file"},
+    {"split": "test", "sample_id": 202420253686, "html_path": "data/raw/All_HTML/202420253686.txt", "issue": "empty file"},
+    {"split": "test", "sample_id": 202420253813, "html_path": "data/raw/All_HTML/202420253813.txt", "issue": "empty file"},
+    {"split": "test", "sample_id": 202420254138, "html_path": "data/raw/All_HTML/202420254138.txt", "issue": "empty file"}
+  ],
+  "policy": "Do not silently label failed extractions as legitimate; do not fabricate results. HTML-only and hybrid experiments cannot run to completion on identical splits without dropping samples or imputing - both would violate split integrity/alignment requirements.",
+  "recommendation": "Complete reliable URL baseline, data audits, evaluation tooling, and reporting as done. HTML/hybrid remain blocked pending valid saved HTML for all split samples."
+}

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-28T00:00:00Z",
+  "repository": "Phishing-Detection-System",
+  "splits": {
+    "dir": "data/processed/research_splits_balanced",
+    "metadata": "data/processed/research_splits_balanced/split_metadata.json",
+    "strategy": "Two-stage GroupShuffleSplit; candidate selection by record allocation and class-rate balance only",
+    "seed": 20261381,
+    "domain_disjoint": true,
+    "no_duplicate_sample_ids": true,
+    "train": {"rows": 10659, "domains": 6612, "phishing_rate": 0.4699315132751665},
+    "validation": {"rows": 2379, "domains": 1417, "phishing_rate": 0.46742328709541825},
+    "test": {"rows": 2320, "domains": 1417, "phishing_rate": 0.4668103448275862}
+  },
+  "experiments": {
+    "url_baseline_balanced": {
+      "status": "completed",
+      "model_path": "models/research_balanced/url_baseline.joblib",
+      "metrics_path": "reports/research_balanced/url_baseline_metrics.json",
+      "selected_model": "random_forest",
+      "test": {
+        "accuracy": 0.9004310344827586,
+        "precision_phishing": 0.8893967093235832,
+        "recall_phishing": 0.8984302862419206,
+        "f1_phishing": 0.8938906752411575,
+        "pr_auc_average_precision": 0.9453211812870932,
+        "roc_auc": 0.9574212623845706,
+        "confusion_matrix": [[1116, 121], [110, 973]]
+      },
+      "selection": "validation F1 (phishing), threshold 0.5, test evaluated after selection"
+    },
+    "html_baseline_balanced": {
+      "status": "blocked",
+      "reason": "Saved HTML files contain empty content for 8 samples across splits (see html_experiment_blocker.json). Policy: do not silently label failures as legitimate; cannot drop samples without breaking alignment/integrity. No model/metrics fabricated.",
+      "blocker_path": "reports/research_balanced/html_experiment_blocker.json"
+    },
+    "hybrid_url_html_baseline": {
+      "status": "blocked",
+      "reason": "Depends on valid HTML for all samples in same splits; blocked by same HTML data issue. No fabricated results.",
+      "blocker_path": "reports/research_balanced/html_experiment_blocker.json"
+    }
+  },
+  "notes": "Original model (models/url_model.joblib) and existing research artifacts not overwritten. Spreadsheet features not assumed equivalent to live extractors."
+}

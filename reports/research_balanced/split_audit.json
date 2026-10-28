@@ -1,0 +1,41 @@
+{
+  "split_dir": "/Users/maanikchandela/Phishing-Detection-System/data/processed/research_splits_balanced",
+  "overlap": {
+    "train_vs_validation": 0,
+    "train_vs_test": 0,
+    "validation_vs_test": 0
+  },
+  "duplicate_sample_ids": 0,
+  "parts": {
+    "train": {
+      "rows": 10659,
+      "domains": 6612,
+      "label_counts": {
+        "0": 5650,
+        "1": 5009
+      },
+      "phishing_rate": 0.4699315132751665,
+      "html_available_true": 10659
+    },
+    "validation": {
+      "rows": 2379,
+      "domains": 1417,
+      "label_counts": {
+        "0": 1267,
+        "1": 1112
+      },
+      "phishing_rate": 0.46742328709541825,
+      "html_available_true": 2379
+    },
+    "test": {
+      "rows": 2320,
+      "domains": 1417,
+      "label_counts": {
+        "0": 1237,
+        "1": 1083
+      },
+      "phishing_rate": 0.4668103448275862,
+      "html_available_true": 2320
+    }
+  }
+}

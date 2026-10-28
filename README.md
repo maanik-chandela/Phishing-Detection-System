@@ -215,3 +215,47 @@ Contributions and reproducibility feedback are welcome through [GitHub Issues](h
 **Think before you click.**
 
 </div>
+
+## Research experiments (balanced, domain-disjoint splits)
+
+This repository includes reproducible research baselines on balanced domain-disjoint splits under `data/processed/research_splits_balanced/`.
+
+### Split validation (audit)
+```bash
+python -m scripts.audit_splits
+```
+Confirms no domain-group overlap across train/validation/test, no duplicate sample IDs, valid labels, and reports counts/distributions. Output: `reports/research_balanced/split_audit.json`.
+
+### URL-only baseline (completed)
+```bash
+python -m scripts.train_url_baseline_balanced
+```
+- Features: `backend.features.live_url_features` (15 URL features)
+- Splits: same domain-disjoint balanced splits
+- Model selection on validation (F1 phishing), test evaluated after selection
+- Artifacts: `models/research_balanced/url_baseline.joblib`, `reports/research_balanced/url_baseline_metrics.json`  
+Test (measured): Acc 0.90043, P(phish)=0.88940, R(phish)=0.89843, F1(phish)=0.89389, AP 0.94532, ROC-AUC 0.95742
+
+### HTML-only baseline (blocked)
+```bash
+python -m scripts.train_html_baseline_balanced
+```
+Blocked: some saved HTML files in `data/raw/All_HTML/` are empty despite `html_available=True` (see `reports/research_balanced/html_experiment_blocker.json`). The code fails hard on extraction errors (does **not** silently label failures as legitimate). No metrics/models fabricated.
+
+### Hybrid URL+HTML baseline (blocked)
+```bash
+python -m scripts.train_hybrid_baseline_balanced
+```
+Blocked for the same HTML data issue; alignment by sample ID is enforced in code, but cannot run on full splits without breaking integrity.
+
+### Run all experiments
+```bash
+python -m scripts.run_experiments
+```
+
+### Tests
+```bash
+python -m pytest tests/test_split_integrity.py tests/test_feature_extraction_alignment.py tests/test_model_input_alignment.py -v
+```
+
+**Notes:** Original model `models/url_model.joblib` and existing research artifacts are not modified. Spreadsheet features are not assumed equivalent to live extractors. DistilBERT/large model downloads are not used.

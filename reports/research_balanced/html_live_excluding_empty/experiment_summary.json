@@ -1,0 +1,95 @@
+{
+  "experiment": "live_html_five_features_excluding_unavailable_html",
+  "features": [
+    "html_password_fields",
+    "html_form_count",
+    "html_iframe_count",
+    "html_external_scripts",
+    "html_external_form_actions"
+  ],
+  "split_policy": "Original domain-disjoint splits; unavailable HTML excluded per split",
+  "original_rows": {
+    "train": 10659,
+    "validation": 2379,
+    "test": 2320
+  },
+  "usable_rows": {
+    "train": 10656,
+    "validation": 2377,
+    "test": 2317
+  },
+  "excluded_rows": {
+    "train": 3,
+    "validation": 2,
+    "test": 3
+  },
+  "domain_counts": {
+    "train": 6610,
+    "validation": 1415,
+    "test": 1415
+  },
+  "validation_metrics": {
+    "logistic_regression": {
+      "threshold": 0.5,
+      "accuracy": 0.7450567942785024,
+      "precision_phishing": 0.6673280423280423,
+      "recall_phishing": 0.9073741007194245,
+      "f1_phishing": 0.7690548780487805,
+      "average_precision": 0.7538787696541557,
+      "roc_auc": 0.8230784542326612,
+      "confusion_matrix": [
+        [
+          762,
+          503
+        ],
+        [
+          103,
+          1009
+        ]
+      ]
+    },
+    "random_forest": {
+      "threshold": 0.5,
+      "accuracy": 0.692048801009676,
+      "precision_phishing": 0.7289156626506024,
+      "recall_phishing": 0.5440647482014388,
+      "f1_phishing": 0.6230690010298661,
+      "average_precision": 0.7416488015418011,
+      "roc_auc": 0.8082836892541303,
+      "confusion_matrix": [
+        [
+          1040,
+          225
+        ],
+        [
+          507,
+          605
+        ]
+      ]
+    }
+  },
+  "selected_model": "logistic_regression",
+  "selection_rule": "Highest validation phishing-class F1 at threshold 0.5",
+  "test_metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.6814846784635304,
+    "precision_phishing": 0.6229508196721312,
+    "recall_phishing": 0.8070175438596491,
+    "f1_phishing": 0.7031375703942075,
+    "average_precision": 0.7067829737211018,
+    "roc_auc": 0.7835462900191706,
+    "confusion_matrix": [
+      [
+        705,
+        529
+      ],
+      [
+        209,
+        874
+      ]
+    ]
+  },
+  "model_path": "models/research_balanced/html_live_excluding_empty/selected_live_html_model.joblib",
+  "excluded_records_path": "reports/research_balanced/html_live_excluding_empty/excluded_records.json",
+  "caveat": "Results apply to this dataset and split only. This is a five-feature live HTML experiment, not the 23-feature workbook HTML experiment and not proof of real-world deployment performance."
+}

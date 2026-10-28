@@ -1,0 +1,56 @@
+{
+  "train": [
+    {
+      "sample_id": "202420250774",
+      "url": "https://gamels-juanpinero35691709.codeanyapp.com/wp-admin/men/men/infospage.php",
+      "html_path": "data/raw/All_HTML/202420250774.txt",
+      "reason": "Empty HTML content"
+    },
+    {
+      "sample_id": "202420253632",
+      "url": "https://www.dafont.com/",
+      "html_path": "data/raw/All_HTML/202420253632.txt",
+      "reason": "Empty HTML content"
+    },
+    {
+      "sample_id": "202420254124",
+      "url": "https://www.admin.ch/",
+      "html_path": "data/raw/All_HTML/202420254124.txt",
+      "reason": "Empty HTML content"
+    }
+  ],
+  "validation": [
+    {
+      "sample_id": "202420254273",
+      "url": "https://www.advanceautoparts.com/",
+      "html_path": "data/raw/All_HTML/202420254273.txt",
+      "reason": "Empty HTML content"
+    },
+    {
+      "sample_id": "202420254365",
+      "url": "https://www.warhammer.com/home",
+      "html_path": "data/raw/All_HTML/202420254365.txt",
+      "reason": "Empty HTML content"
+    }
+  ],
+  "test": [
+    {
+      "sample_id": "202420253686",
+      "url": "https://www.dreamstime.com/",
+      "html_path": "data/raw/All_HTML/202420253686.txt",
+      "reason": "Empty HTML content"
+    },
+    {
+      "sample_id": "202420253813",
+      "url": "https://www.usgs.gov/",
+      "html_path": "data/raw/All_HTML/202420253813.txt",
+      "reason": "Empty HTML content"
+    },
+    {
+      "sample_id": "202420254138",
+      "url": "https://www.usgs.gov/programs/earthquake-hazards",
+      "html_path": "data/raw/All_HTML/202420254138.txt",
+      "reason": "Empty HTML content"
+    }
+  ]
+}

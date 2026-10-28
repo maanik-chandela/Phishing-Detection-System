@@ -1,0 +1,88 @@
+{
+  "experiment": "URL-only baseline using balanced group-disjoint splits",
+  "selected_model": "random_forest",
+  "selection_metric": "validation_f1_phishing",
+  "decision_threshold": 0.5,
+  "validation_results": {
+    "logistic_regression": {
+      "accuracy": 0.885666246321984,
+      "precision_phishing": 0.8736654804270463,
+      "recall_phishing": 0.8830935251798561,
+      "f1_phishing": 0.8783542039355993,
+      "pr_auc_average_precision": 0.9374316020067299,
+      "roc_auc": 0.9400424017534197,
+      "confusion_matrix": [
+        [
+          1125,
+          142
+        ],
+        [
+          130,
+          982
+        ]
+      ]
+    },
+    "random_forest": {
+      "accuracy": 0.905422446406053,
+      "precision_phishing": 0.9020852221214869,
+      "recall_phishing": 0.8947841726618705,
+      "f1_phishing": 0.8984198645598194,
+      "pr_auc_average_precision": 0.9611728593295812,
+      "roc_auc": 0.9628555245779697,
+      "confusion_matrix": [
+        [
+          1159,
+          108
+        ],
+        [
+          117,
+          995
+        ]
+      ]
+    }
+  },
+  "test_results": {
+    "accuracy": 0.9004310344827586,
+    "precision_phishing": 0.8893967093235832,
+    "recall_phishing": 0.8984302862419206,
+    "f1_phishing": 0.8938906752411575,
+    "pr_auc_average_precision": 0.9453211812870932,
+    "roc_auc": 0.9574212623845706,
+    "confusion_matrix": [
+      [
+        1116,
+        121
+      ],
+      [
+        110,
+        973
+      ]
+    ]
+  },
+  "train_records": 10659,
+  "validation_records": 2379,
+  "test_records": 2320,
+  "train_domains": 6612,
+  "validation_domains": 1417,
+  "test_domains": 1417,
+  "split_seed": 20261381,
+  "split_strategy": "Two-stage GroupShuffleSplit; candidate selection by record allocation and class-rate balance only",
+  "model_performance_used_for_split_selection": false,
+  "feature_names": [
+    "url_length",
+    "domain_length",
+    "url_contains_ip",
+    "uses_https",
+    "no_of_dots",
+    "no_of_hyphen",
+    "no_of_at",
+    "special_characters_count",
+    "num_query_params",
+    "no_of_slashes_inpath",
+    "hostname_digit_ratio",
+    "has_punycode",
+    "has_explicit_port",
+    "url_entropy",
+    "numeric_proportion"
+  ]
+}
