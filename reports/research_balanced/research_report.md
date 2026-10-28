@@ -49,3 +49,37 @@ How well do URL-only, HTML-only, and URL+HTML models generalize under strict dom
 
 ## Reproducibility
 See `scripts/run_experiments.py` and exact commands below.
+
+<!-- RESEARCH-FIGURES-SECTION -->
+## Research Figures
+
+### Dataset split and HTML availability audit
+
+![Dataset split and HTML availability audit](figures/fig1_dataset_html_availability.png)
+
+*Figure: Dataset split and HTML availability audit.*
+
+### Offline workbook-feature model comparison (provisional)
+
+![Offline workbook-feature model comparison (provisional)](figures/fig2_offline_model_comparison.png)
+
+*Figure: Offline workbook-feature model comparison (provisional).*
+
+### Live HTML-only test confusion matrix
+
+![Live HTML-only test confusion matrix](figures/fig3_live_html_confusion_matrix.png)
+
+*Figure: Live HTML-only test confusion matrix.*
+
+### Live HTML-only test metrics
+
+![Live HTML-only test metrics](figures/fig4_live_html_test_metrics.png)
+
+*Figure: Live HTML-only test metrics.*
+
+### Research evaluation workflow
+
+![Research evaluation workflow](figures/fig5_research_workflow.png)
+
+*Figure: Research evaluation workflow.*
+
